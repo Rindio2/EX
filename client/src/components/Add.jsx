@@ -1,7 +1,7 @@
-
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './Add.css'; // Import your CSS file
 
 export default function Add() {
 
@@ -33,46 +33,49 @@ export default function Add() {
     };
     
   return (
-    <div>
-        Add <br />
+    <div className="add-container">
+        <h1 className="add-heading">Thêm sách mới</h1>
+        <label className="add-label" htmlFor="name">NAME</label><br />
+        <input 
+            name="name" 
+            type="text" 
+            className="add-input"
+            onChange={handleChange}
+            /> <br />
 
-            <h1>Thêm sách mới</h1>
-            <label htmlFor="">NAME</label><br />
-            <input 
-                name="name" 
-                type="text" 
-                onChange={handleChange}
-                /> <br />
+        <label className="add-label" htmlFor="description">DESCRIPTION</label><br />
+        <input 
+            name="description" 
+            type="text"
+            className="add-input"
+            onChange={handleChange}
+            /> <br />
 
-            <label htmlFor="">DESCRIPSION</label><br />
-            <input 
-                name="description" 
-                type="int"
-                onChange={handleChange}
-                /> <br />
+        <label className="add-label" htmlFor="price">PRICE</label><br />
+        <input 
+            name="price" 
+            type="text" 
+            className="add-input"
+            onChange={handleChange}
+            /> <br />
 
-            <label htmlFor="">PRICE</label><br />
-            <input 
-                name="price" 
-                type="int" 
-                onChange={handleChange}
-                /> <br />
+        <label className="add-label" htmlFor="created_at">CREATE AT</label><br />
+        <input 
+            name="created_at" 
+            type="date" 
+            className="add-input"
+            onChange={handleChange}
+            /> <br />
 
-            <label htmlFor="">CREATE AT</label><br />
-            <input 
-                name="created_at" 
-                type="date" 
-                onChange={handleChange}
-                /> <br />
-
-            <label htmlFor="">UPDATE AT</label><br />
-            <input 
-                name="update_at"
-                type="date" 
-                onChange={handleChange}
-                /> <br />
+        <label className="add-label" htmlFor="update_at">UPDATE AT</label><br />
+        <input 
+            name="update_at"
+            type="date" 
+            className="add-input"
+            onChange={handleChange}
+            /> <br />
                     
-            <button onClick={AddBook}>Add</button>
+        <button onClick={AddBook} className="add-button">Add</button>
     </div>
   )
 }

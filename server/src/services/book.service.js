@@ -33,8 +33,39 @@ async function deleteOneBook(id) {
     }
 }
 
+async function updateBook(id, updatedData) {
+    const { name, description, price } = updatedData;
+
+    // Kiểm tra xem trường 'name' có tồn tại và không phải là null
+    if (!name) {
+        throw new Error("Name field cannot be null");
+    }
+
+    try {
+        // Tiến hành cập nhật sách trong cơ sở dữ liệu
+        const [result] = await pool.query(
+            "UPDATE book SET name = ?, description = ?, price = ? WHERE id = ?",
+            [name, description, price, id]
+        );
+
+        // Kiểm tra xem có bản ghi nào được cập nhật không
+        if (result.affectedRows === 0) {
+            throw new Error(`Book with id ${id} not found`);
+        }
+
+        return id; // Trả về id của sách đã được cập nhật thành công
+    } catch (error) {
+        throw error; // Ném lỗi nếu có bất kỳ lỗi nào xảy ra trong quá trình cập nhật
+    }
+}
+
+
+
+
+
 module.exports = {
     getAllBook,
     getOneBook,
-    deleteOneBook 
+    deleteOneBook,
+    updateBook
 };

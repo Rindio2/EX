@@ -1,0 +1,43 @@
+/* Add component styles */
+
+/* Container */
+.add-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading */
+.add-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.add-label {
+    margin-bottom: 8px;
+}
+
+/* Input fields */
+.add-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Add button */
+.add-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}

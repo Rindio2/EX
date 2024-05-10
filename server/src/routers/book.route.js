@@ -17,5 +17,6 @@ bookRouter.get("/api/v1/book/:id", (req, res) => {
 bookRouter.delete("/api/v1/book/:id", (req, res) => {
     bookController.deleteOneBook(req, res);
 });
+bookRouter.put("/api/v1/book/:id", bookController.updateBook);
 
 module.exports = bookRouter;
